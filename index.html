@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dale L. Heintzelman | Contract Mechanical Engineering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(180deg, #0b1220, #111827);
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+section { padding: 5rem 0; }
+
+h1, h2, h3 { color: #ffffff; }
+
+p { font-size: 1.05rem; max-width: 900px; }
+
+.hero { padding: 6rem 0; }
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #1f2937;
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+footer { padding: 3rem 0; text-align: center; }
+
+button { font-weight: 600; }
+</style>
+</head>
+
+<body>
+
+<nav class="container-fluid">
+  <ul>
+    <li><strong>Dale L. Heintzelman, BS ME, EIT</strong></li>
+  </ul>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact" role="button">Request Consultation</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+<hgroup>
+<h1>Contract Mechanical Engineering Services</h1>
+<h3>Precision Systems • Regulated Products • Commercialization Support</h3>
+</hgroup>
+
+<p>
+Mechanical engineering consultant providing contract support for medical,
+scientific, fluidic, motion-control, and advanced instrumentation systems.
+Over 18 years of experience delivering commercially released products
+within ISO-controlled and performance-critical environments.
+</p>
+
+<a href="#contact" role="button">Discuss Your Project</a>
+</section>
+
+<section id="services">
+<h2>Contract Services</h2>
+<div class="grid-4">
+
+<div class="card">
+<h3>New Product Development</h3>
+<p>
+Concept architecture, requirements definition, risk analysis,
+design execution, validation planning, and production transition.
+</p>
+</div>
+
+<div class="card">
+<h3>Precision Mechanical Design</h3>
+<p>
+Fluidic systems, displacement pumps, brushless DC motor integration,
+optical assemblies, and high-accuracy electromechanical platforms.
+</p>
+</div>
+
+<div class="card">
+<h3>FEA & Engineering Analysis</h3>
+<p>
+Structural, thermal, and flow analysis using SolidWorks Simulation
+and ANSYS to reduce risk and accelerate development.
+</p>
+</div>
+
+<div class="card">
+<h3>DFMA & Commercialization</h3>
+<p>
+Tolerance stack optimization, GD&T per ASME Y14.5,
+cost modeling, supplier integration, and ISO 9001 change control.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="industries">
+<h2>Industry Experience</h2>
+<div class="grid-4">
+
+<div class="card">
+<h3>Medical & IVD Systems</h3>
+<p>
+Precision fluidics, pump systems, medical connectors,
+and laboratory instrumentation platforms.
+</p>
+</div>
+
+<div class="card">
+<h3>Scientific Instrumentation</h3>
+<p>
+Air quality monitoring systems, optical technologies,
+and advanced sensing platforms.
+</p>
+</div>
+
+<div class="card">
+<h3>Precision Motors & Motion</h3>
+<p>
+Brushless DC motors, servo control systems,
+and motion-integrated assemblies.
+</p>
+</div>
+
+<div class="card">
+<h3>Advanced Manufacturing</h3>
+<p>
+CNC machining integration, BOM structuring,
+ERP coordination, and production ramp support.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="credentials">
+<h2>Credentials & Intellectual Property</h2>
+<p>
+Named inventor on multiple granted United States and international patents
+covering precision pump systems, modular photometric instrumentation,
+and advanced mechanical assemblies.
+</p>
+<p>
+Extensive experience in regulated development environments including
+ISO 9001 documentation control, CE conformity analysis,
+accelerated life testing (ALT/HALT), and cross-functional engineering leadership.
+</p>
+</section>
+
+<section id="contact">
+<h2>Request Consultation</h2>
+<p>
+Available for contract engineering engagements.
+On-site or remote support.
+</p>
+
+<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
+<div class="grid">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+</div>
+<textarea name="message" placeholder="Project Description" required></textarea>
+<button type="submit">Send Inquiry</button>
+</form>
+
+</section>
+
+</main>
+
+<footer class="container">
+<small>
+Email: Dale.Heintzelman@gmail.com
+</small>
+</footer>
+
+</body>
+</html>
