@@ -8,45 +8,61 @@
 
 <style>
 :root {
-  --background: #0b1220;
+  --background: #0a0f1c;
   --card: #111827;
   --accent: #38bdf8;
+  --text: #e5e7eb;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
+  margin: 0;
   background-color: var(--background);
-  color: #e5e7eb;
-  line-height: 1.6;
+  color: var(--text);
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
-/* Subtle animated grid background */
+/* Animated technical grid */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: moveGrid 20s linear infinite;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: drift 40s linear infinite;
   z-index: -1;
 }
 
-@keyframes moveGrid {
-  from { transform: translateY(0); }
-  to { transform: translateY(40px); }
+@keyframes drift {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50px,50px); }
 }
 
+/* Sticky glass nav */
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(10,15,28,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 10;
+}
+
+/* Layout */
 main {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 section {
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
 }
 
 section.visible {
@@ -54,58 +70,91 @@ section.visible {
   transform: translateY(0);
 }
 
-h1, h2, h3 {
-  color: #ffffff;
+/* Hero */
+.hero {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero h3 {
+  color: #94a3b8;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: rgba(56,189,248,0.15);
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+/* Accent line */
+h2 {
+  margin-bottom: 1rem;
   position: relative;
 }
 
-/* Accent line under section headers */
 h2::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 70px;
   height: 3px;
   background: var(--accent);
   margin-top: 0.5rem;
   border-radius: 2px;
 }
 
-.highlight {
-  color: var(--accent);
-  font-weight: 600;
-}
-
+/* Cards */
 .cards {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .card {
-  background-color: var(--card);
-  padding: 2rem;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border-color: rgba(56,189,248,0.3);
+}
+
+/* Contact */
+form textarea {
+  min-height: 130px;
 }
 
 footer {
   text-align: center;
-  padding: 3rem 0;
-  opacity: 0.6;
+  padding: 4rem 0;
+  opacity: 0.5;
+  font-size: 0.9rem;
 }
 
 button {
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -125,24 +174,25 @@ button {
 
 <main class="container">
 
-<section>
+<section class="hero">
   <h1>Senior Mechanical Engineering Consultant</h1>
+  <h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
+
   <p>
     Providing senior-level mechanical engineering execution for technically demanding
     hardware platforms. Supporting engineering teams with independent design ownership,
     rigorous analysis, and disciplined product development through validated production release.
   </p>
 
-  <p class="highlight">
-    18+ years product development execution | 6+ granted patents | Multiple commercial releases
-  </p>
+  <div class="badge">
+    18+ Years Experience • 6+ Granted Patents • Multiple Commercial Releases
+  </div>
 </section>
 
 <section id="services">
   <h2>Senior-Level Engineering Capability</h2>
 
   <div class="cards">
-
     <div class="card">
       <h3>Product Architecture & System Design</h3>
       <p>
@@ -174,7 +224,6 @@ button {
         and transition from prototype to scalable production.
       </p>
     </div>
-
   </div>
 </section>
 
@@ -188,7 +237,7 @@ button {
   </p>
 
   <p>
-    Experienced in carrying concepts from early architecture through
+    Experienced in carrying concepts from architecture through
     detailed design, validation, and production release.
   </p>
 </section>
@@ -197,7 +246,7 @@ button {
   <h2>Confidential Consultation</h2>
 
   <p>
-    Currently accepting new contract engineering engagements.
+    Currently accepting select contract engineering engagements.
     Initial discussion available within one week.
   </p>
 
@@ -215,7 +264,7 @@ button {
 
 </main>
 
-<footer class="container">
+<footer>
   Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
 </footer>
 
