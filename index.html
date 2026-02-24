@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll progress indicator */
+/* Scroll progress */
 #progress {
   position: fixed;
   top: 0;
@@ -35,45 +35,44 @@ body {
   z-index: 9999;
 }
 
-/* Animated blueprint grid */
+/* Subtle blueprint grid background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: drift 60s linear infinite;
-  z-index: -1;
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: drift 90s linear infinite;
+  z-index: -2;
 }
 
 @keyframes drift {
   from { transform: translate(0,0); }
-  to { transform: translate(-60px,60px); }
+  to { transform: translate(-70px,70px); }
 }
 
-/* Glass nav */
+/* Glass navigation */
 nav {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   background: rgba(10,15,28,0.75);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 10;
 }
 
-/* Layout */
 main {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 section {
-  margin-bottom: 8rem;
+  margin-bottom: 9rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
+  transform: translateY(50px);
+  transition: all 1s ease;
 }
 
 section.visible {
@@ -84,50 +83,55 @@ section.visible {
 /* Hero */
 .hero {
   text-align: center;
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
 
 .hero h1 {
-  font-size: 3.4rem;
+  font-size: 3.6rem;
+  letter-spacing: 0.6px;
   margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
 }
 
 .hero h3 {
   color: #94a3b8;
   font-weight: 400;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Blueprint SVG overlay */
+.hero svg {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.08;
+  z-index: -1;
+  width: 600px;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
 }
 
 .badge {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 999px;
   background: rgba(56,189,248,0.15);
-  border: 1px solid rgba(56,189,248,0.3);
+  border: 1px solid rgba(56,189,248,0.35);
   color: var(--accent);
-  font-size: 0.95rem;
-  margin-top: 2rem;
-  box-shadow: 0 0 20px rgba(56,189,248,0.15);
-}
-
-/* Signature abstract accent */
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
+  font-size: 1rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 0 30px rgba(56,189,248,0.15);
 }
 
 /* Section headers */
 h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -135,7 +139,7 @@ h2 {
 h2::after {
   content: "";
   display: block;
-  width: 80px;
+  width: 90px;
   height: 3px;
   background: var(--accent);
   margin-top: 0.6rem;
@@ -157,29 +161,29 @@ h2::after {
 .card {
   background: var(--card);
   padding: 3rem;
-  border-radius: 18px;
-  transition: 0.35s ease;
+  border-radius: 20px;
+  transition: 0.4s ease;
   border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 35px 70px rgba(0,0,0,0.7);
-  border-color: rgba(56,189,248,0.4);
-}
-
-/* Contact */
-form textarea {
-  min-height: 140px;
+  transform: translateY(-12px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.75);
+  border-color: rgba(56,189,248,0.5);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 5rem 0 4rem 0;
+  padding: 6rem 0 5rem 0;
   border-top: 1px solid rgba(255,255,255,0.05);
-  opacity: 0.5;
+  opacity: 0.45;
   font-size: 0.9rem;
+}
+
+button {
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -202,6 +206,14 @@ footer {
 <main class="container">
 
 <section class="hero">
+  <!-- Blueprint Signature SVG -->
+  <svg viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="100" y1="20" x2="100" y2="180" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="20" y1="100" x2="180" y2="100" stroke="#38bdf8" stroke-width="1"/>
+  </svg>
+
   <h1>Senior Mechanical Engineering Consultant</h1>
   <h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
 
@@ -264,8 +276,8 @@ footer {
   </p>
 
   <p>
-    Experienced in carrying concepts from architecture through
-    detailed design, validation, and production release.
+    Focused on delivering production-ready systems that withstand regulatory,
+    manufacturing, and operational scrutiny.
   </p>
 </section>
 
@@ -296,7 +308,6 @@ footer {
 </footer>
 
 <script>
-/* Fade-in sections */
 const sections = document.querySelectorAll("section");
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -307,7 +318,6 @@ const observer = new IntersectionObserver(entries => {
 });
 sections.forEach(section => observer.observe(section));
 
-/* Scroll progress */
 window.onscroll = function() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
