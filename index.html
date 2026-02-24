@@ -10,31 +10,211 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: radial-gradient(circle at top, #111827, #0a0f1c 70%);
+  background: radial-gradient(circle at top, #0f172a, #020617 80%);
   color: #e5e7eb;
   line-height: 1.7;
 }
 
-section { padding: 6rem 0; }
+section { padding: 5rem 0; }
 
-h1, h2, h3 {
-  color: #ffffff;
-  letter-spacing: 0.5px;
-}
+h1, h2, h3 { color: #ffffff; }
 
-p { font-size: 1.08rem; max-width: 950px; }
+p { font-size: 1.05rem; max-width: 900px; }
 
 .hero {
-  padding: 7rem 0;
   text-align: center;
+  padding: 6rem 0;
 }
 
 .highlight {
   font-weight: 600;
-  color: #60a5fa;
+  color: #38bdf8;
   margin-top: 1.5rem;
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #1e293b;
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.5);
+}
+
+.hero img,
+.tech-image {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 18px;
+  margin-top: 3rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,.6);
+}
+
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  opacity: 0.7;
+}
+
+button {
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="container-fluid">
+  <ul>
+    <li><strong>Dale L. Heintzelman, BS ME, EIT</strong></li>
+  </ul>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#engagement">Engagement</a></li>
+    <li><a href="#contact" role="button">Consultation</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+<h1>Senior Mechanical Engineering Consultant</h1>
+<h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
+
+<p>
+Providing senior-level mechanical engineering execution for technically demanding
+hardware platforms. Supporting engineering teams with independent design ownership,
+rigorous analysis, and disciplined product development through validated production release.
+</p>
+
+<p class="highlight">
+18+ years product development execution | 6+ granted patents | Multiple commercial releases
+</p>
+
+<a href="#contact" role="button">Schedule a Technical Consultation</a>
+
+<img src="https://images.unsplash.com/photo-1581091870627-3a8f9a3e2a2f?auto=format&fit=crop&w=1600&q=80"
+alt="Precision mechanical engineering system">
+</section>
+
+<section id="services">
+<h2>Senior-Level Engineering Capability</h2>
+
+<div class="grid-4">
+
+<div class="card">
+<h3>Product Architecture & System Design</h3>
+<p>Mechanical system architecture, subsystem definition,
+interface management, and structured risk mitigation.</p>
+</div>
+
+<div class="card">
+<h3>Precision Mechanical & Fluidic Systems</h3>
+<p>Design and integration of displacement pumps, motion assemblies,
+optical systems, and electromechanical platforms.</p>
+</div>
+
+<div class="card">
+<h3>Engineering Analysis</h3>
+<p>Finite element analysis across structural, thermal,
+and flow domains to reduce technical risk prior to release.</p>
+</div>
+
+<div class="card">
+<h3>DFMA & Production Transition</h3>
+<p>Tolerance optimization, supplier coordination,
+and transition from prototype to scalable production.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<img class="tech-image"
+src="https://images.unsplash.com/photo-1581093458791-9f3c3900c7a1?auto=format&fit=crop&w=1600&q=80"
+alt="Advanced engineering laboratory environment">
+</section>
+
+<section id="expertise">
+<h2>Technical Depth</h2>
+
+<p>
+Extensive cross-disciplinary integration experience spanning mechanical,
+electrical, motion control, sensing, and fluidic systems within regulated
+and performance-critical environments.
+</p>
+
+<p><strong>
+Experienced in carrying concepts from architecture
+through detailed design, validation, and production release.
+</strong></p>
+
+<p>
+Focused on engineering systems that withstand regulatory scrutiny,
+manufacturing scale, and real-world operational demands.
+</p>
+</section>
+
+<section id="engagement">
+<h2>Engagement Model</h2>
+
+<p>
+Available for technically complex programs requiring independent engineering ownership.
+Structured around defined deliverables and milestone-based development.
+Remote and hybrid collaboration supported.
+</p>
+</section>
+
+<section id="contact">
+<h2>Confidential Consultation</h2>
+
+<p>
+Currently accepting new contract engineering engagements.
+Initial discussion available within one week.
+</p>
+
+<p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
+
+<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
+<div class="grid">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+</div>
+<textarea name="message" placeholder="Brief Project Overview" required></textarea>
+<button type="submit">Submit Inquiry</button>
+</form>
+
+</section>
+
+</main>
+
+<footer class="container">
+<small>
+Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
+</small>
+</footer>
+
+</body>
+</html>
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -611,5 +791,6 @@ Independent Mechanical Engineering Consultant | Massachusetts & National Remote 
 
 </body>
 </html>
+
 
 
