@@ -4,78 +4,61 @@
 <meta charset="UTF-8">
 <title>Dale L. Heintzelman | Senior Mechanical Engineering Consultant</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 
 <style>
-html { scroll-behavior: smooth; }
-
-body {
-  background: radial-gradient(circle at top, #0f172a, #020617 80%);
-  color: #e5e7eb;
-  line-height: 1.7;
+:root {
+  --background: #0b1220;
+  --card: #111827;
+  --accent: #38bdf8;
 }
 
-section { padding: 5rem 0; }
+body {
+  background-color: var(--background);
+  color: #e5e7eb;
+  line-height: 1.6;
+}
 
-h1, h2, h3 { color: #ffffff; }
+main {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 
-p { font-size: 1.05rem; max-width: 900px; }
+section {
+  margin-bottom: 5rem;
+}
 
-.hero {
-  text-align: center;
-  padding: 6rem 0;
+h1, h2, h3 {
+  color: #ffffff;
 }
 
 .highlight {
+  color: var(--accent);
   font-weight: 600;
-  color: #38bdf8;
-  margin-top: 1.5rem;
 }
 
-.grid-4 {
+.cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
-@media (max-width: 1200px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 700px) {
-  .grid-4 { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {
-  background: #1e293b;
-  padding: 2.5rem;
-  border-radius: 16px;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,.5);
-}
-
-.hero img,
-.tech-image {
-  width: 100%;
-  max-width: 1200px;
-  border-radius: 18px;
-  margin-top: 3rem;
-  box-shadow: 0 25px 60px rgba(0,0,0,.6);
+  background-color: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 footer {
-  padding: 3rem 0;
   text-align: center;
-  opacity: 0.7;
-}
-
-button {
-  font-weight: 600;
-  padding: 0.8rem 1.5rem;
+  padding: 3rem 0;
+  opacity: 0.6;
 }
 </style>
 </head>
@@ -89,708 +72,105 @@ button {
   <ul>
     <li><a href="#services">Services</a></li>
     <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#engagement">Engagement</a></li>
     <li><a href="#contact" role="button">Consultation</a></li>
   </ul>
 </nav>
 
 <main class="container">
 
-<section class="hero">
-<h1>Senior Mechanical Engineering Consultant</h1>
-<h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
+<section>
+  <h1>Senior Mechanical Engineering Consultant</h1>
+  <p>
+    Providing senior-level mechanical engineering execution for technically demanding
+    hardware platforms. Supporting engineering teams with independent design ownership,
+    rigorous analysis, and disciplined product development through validated production release.
+  </p>
 
-<p>
-Providing senior-level mechanical engineering execution for technically demanding
-hardware platforms. Supporting engineering teams with independent design ownership,
-rigorous analysis, and disciplined product development through validated production release.
-</p>
-
-<p class="highlight">
-18+ years product development execution | 6+ granted patents | Multiple commercial releases
-</p>
-
-<a href="#contact" role="button">Schedule a Technical Consultation</a>
-
-<img src="https://images.unsplash.com/photo-1581091870627-3a8f9a3e2a2f?auto=format&fit=crop&w=1600&q=80"
-alt="Precision mechanical engineering system">
+  <p class="highlight">
+    18+ years product development execution | 6+ granted patents | Multiple commercial releases
+  </p>
 </section>
 
 <section id="services">
-<h2>Senior-Level Engineering Capability</h2>
+  <h2>Senior-Level Engineering Capability</h2>
 
-<div class="grid-4">
+  <div class="cards">
 
-<div class="card">
-<h3>Product Architecture & System Design</h3>
-<p>Mechanical system architecture, subsystem definition,
-interface management, and structured risk mitigation.</p>
-</div>
+    <div class="card">
+      <h3>Product Architecture & System Design</h3>
+      <p>
+        Mechanical system architecture, subsystem definition,
+        interface management, and structured risk mitigation.
+      </p>
+    </div>
 
-<div class="card">
-<h3>Precision Mechanical & Fluidic Systems</h3>
-<p>Design and integration of displacement pumps, motion assemblies,
-optical systems, and electromechanical platforms.</p>
-</div>
+    <div class="card">
+      <h3>Precision Mechanical & Fluidic Systems</h3>
+      <p>
+        Design and integration of displacement pumps, motion assemblies,
+        optical systems, and electromechanical platforms.
+      </p>
+    </div>
 
-<div class="card">
-<h3>Engineering Analysis</h3>
-<p>Finite element analysis across structural, thermal,
-and flow domains to reduce technical risk prior to release.</p>
-</div>
+    <div class="card">
+      <h3>Engineering Analysis</h3>
+      <p>
+        Finite element analysis across structural, thermal,
+        and flow domains to reduce technical risk prior to release.
+      </p>
+    </div>
 
-<div class="card">
-<h3>DFMA & Production Transition</h3>
-<p>Tolerance optimization, supplier coordination,
-and transition from prototype to scalable production.</p>
-</div>
+    <div class="card">
+      <h3>DFMA & Production Transition</h3>
+      <p>
+        Tolerance optimization, supplier coordination,
+        and transition from prototype to scalable production.
+      </p>
+    </div>
 
-</div>
-</section>
-
-<section>
-<img class="tech-image"
-src="https://images.unsplash.com/photo-1581093458791-9f3c3900c7a1?auto=format&fit=crop&w=1600&q=80"
-alt="Advanced engineering laboratory environment">
+  </div>
 </section>
 
 <section id="expertise">
-<h2>Technical Depth</h2>
+  <h2>Technical Depth</h2>
 
-<p>
-Extensive cross-disciplinary integration experience spanning mechanical,
-electrical, motion control, sensing, and fluidic systems within regulated
-and performance-critical environments.
-</p>
+  <p>
+    Extensive cross-disciplinary integration experience spanning mechanical,
+    electrical, motion control, sensing, and fluidic systems within regulated
+    and performance-critical environments.
+  </p>
 
-<p><strong>
-Experienced in carrying concepts from architecture
-through detailed design, validation, and production release.
-</strong></p>
-
-<p>
-Focused on engineering systems that withstand regulatory scrutiny,
-manufacturing scale, and real-world operational demands.
-</p>
-</section>
-
-<section id="engagement">
-<h2>Engagement Model</h2>
-
-<p>
-Available for technically complex programs requiring independent engineering ownership.
-Structured around defined deliverables and milestone-based development.
-Remote and hybrid collaboration supported.
-</p>
+  <p>
+    Experienced in carrying concepts from early architecture through
+    detailed design, validation, and production release.
+  </p>
 </section>
 
 <section id="contact">
-<h2>Confidential Consultation</h2>
+  <h2>Confidential Consultation</h2>
 
-<p>
-Currently accepting new contract engineering engagements.
-Initial discussion available within one week.
-</p>
+  <p>
+    Currently accepting new contract engineering engagements.
+    Initial discussion available within one week.
+  </p>
 
-<p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
+  <p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
 
-<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
-<div class="grid">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-</div>
-<textarea name="message" placeholder="Brief Project Overview" required></textarea>
-<button type="submit">Submit Inquiry</button>
-</form>
-
+  <form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
+    <div class="grid">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <textarea name="message" placeholder="Brief Project Overview" required></textarea>
+    <button type="submit">Submit Inquiry</button>
+  </form>
 </section>
 
 </main>
 
 <footer class="container">
-<small>
-Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
-</small>
+  Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
 </footer>
 
 </body>
 </html>
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-}
-
-@media (max-width: 1200px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 700px) {
-  .grid-4 { grid-template-columns: 1fr; }
-}
-
-.card {
-  background: #1b2433;
-  padding: 2.75rem;
-  border-radius: 18px;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,.5);
-}
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.6);
-  margin-top: 3rem;
-}
-
-.tech-image {
-  margin: 4rem 0;
-}
-
-footer {
-  padding: 4rem 0;
-  text-align: center;
-  opacity: 0.8;
-}
-
-button {
-  font-weight: 600;
-  padding: 0.9rem 1.6rem;
-}
-</style>
-</head>
-
-<body>
-
-<nav class="container-fluid">
-  <ul>
-    <li><strong>Dale L. Heintzelman, BS ME, EIT</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#engagement">Engagement</a></li>
-    <li><a href="#contact" role="button">Schedule Consultation</a></li>
-  </ul>
-</nav>
-
-<main class="container">
-
-<section class="hero">
-<h1>Senior Mechanical Engineering Consultant</h1>
-<h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
-
-<p>
-Providing senior-level mechanical engineering execution for organizations
-developing technically demanding hardware platforms. Supporting engineering
-teams with independent design ownership, rigorous analysis, and disciplined
-product development through validated production release.
-</p>
-
-<p class="highlight">
-18+ years product development execution | 6+ granted patents | Multiple commercial product releases
-</p>
-
-<a href="#contact" role="button">Schedule a Technical Consultation</a>
-
-<img src="https://picsum.photos/1600/800?grayscale&blur=1" alt="High-tech precision mechanical aesthetic">
-</section>
-
-<section id="services">
-<h2>Senior-Level Engineering Capability</h2>
-
-<div class="grid-4">
-
-<div class="card">
-<h3>Product Architecture & System Design</h3>
-<p>
-Mechanical system architecture, subsystem definition,
-interface management, tolerance strategy, and structured risk mitigation.
-</p>
-</div>
-
-<div class="card">
-<h3>Precision Mechanical & Fluidic Systems</h3>
-<p>
-Design and integration of displacement pumps, motion assemblies,
-optical systems, and electromechanical platforms.
-</p>
-</div>
-
-<div class="card">
-<h3>Engineering Analysis</h3>
-<p>
-Finite element analysis across structural, thermal, and flow domains
-to reduce technical risk prior to hardware release.
-</p>
-</div>
-
-<div class="card">
-<h3>DFMA & Production Transition</h3>
-<p>
-Tolerance optimization, supplier coordination,
-ERP integration, and transition from prototype to scalable production.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<img class="tech-image" src="https://picsum.photos/1600/700?grayscale" alt="Advanced engineering innovation visual">
-</section>
-
-<section id="expertise">
-<h2>Technical Depth</h2>
-
-<p>
-Extensive cross-disciplinary integration experience spanning mechanical,
-electrical, motion control, sensing, and fluidic systems within
-regulated and performance-critical environments.
-</p>
-
-<p><strong>
-Experienced in carrying concepts from early architecture
-through detailed design, validation, and production release.
-</strong></p>
-
-<p>
-Focused on engineering systems that withstand regulatory scrutiny,
-manufacturing scale, and real-world operational demands.
-</p>
-</section>
-
-<section id="engagement">
-<h2>Engagement Model</h2>
-
-<p>
-Available for technically complex programs requiring
-independent engineering ownership and disciplined execution.
-</p>
-
-<p>
-Structured around defined deliverables and milestone-based development.
-Remote and hybrid collaboration supported.
-</p>
-</section>
-
-<section id="contact">
-<h2>Confidential Consultation</h2>
-
-<p>
-Currently accepting new contract engineering engagements.
-Initial technical discussion available within one week.
-</p>
-
-<p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
-
-<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
-<div class="grid">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-</div>
-<textarea name="message" placeholder="Brief Project Overview" required></textarea>
-<button type="submit">Submit Inquiry</button>
-</form>
-
-</section>
-
-</main>
-
-<footer class="container">
-<small>
-Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
-</small>
-</footer>
-
-</body>
-</html>
-.highlight {
-  font-weight: 600;
-  color: #60a5fa;
-  margin-top: 1.5rem;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-}
-
-@media (max-width: 1200px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 700px) {
-  .grid-4 { grid-template-columns: 1fr; }
-}
-
-.card {
-  background: #1b2433;
-  padding: 2.75rem;
-  border-radius: 18px;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,.5);
-}
-
-.tech-image {
-  margin: 4rem 0;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.5);
-}
-
-footer {
-  padding: 4rem 0;
-  text-align: center;
-  opacity: 0.8;
-}
-
-button {
-  font-weight: 600;
-  padding: 0.9rem 1.6rem;
-}
-</style>
-</head>
-
-<body>
-
-<nav class="container-fluid">
-  <ul>
-    <li><strong>Dale L. Heintzelman, BS ME, EIT</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#engagement">Engagement</a></li>
-    <li><a href="#contact" role="button">Schedule Consultation</a></li>
-  </ul>
-</nav>
-
-<main class="container">
-
-<section class="hero">
-<h1>Senior Mechanical Engineering Consultant</h1>
-<h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
-
-<p>
-Providing senior-level mechanical engineering execution for organizations
-developing technically demanding hardware platforms. Supporting engineering
-teams with independent design ownership, rigorous analysis, and disciplined
-product development through validated production release.
-</p>
-
-<p class="highlight">
-18+ years product development execution | 6+ granted patents | Multiple commercial product releases
-</p>
-
-<a href="#contact" role="button">Schedule a Technical Consultation</a>
-
-<img src="https://images.unsplash.com/photo-1581093458791-9f3c3900c7a1?auto=format&fit=crop&w=1400&q=80" alt="High-tech precision mechanical system">
-</section>
-
-<section id="services">
-<h2>Senior-Level Engineering Capability</h2>
-
-<div class="grid-4">
-
-<div class="card">
-<h3>Product Architecture & System Design</h3>
-<p>
-Mechanical system architecture, subsystem definition,
-interface management, tolerance strategy, and structured risk mitigation.
-</p>
-</div>
-
-<div class="card">
-<h3>Precision Mechanical & Fluidic Systems</h3>
-<p>
-Design and integration of displacement pumps, motion assemblies,
-optical systems, and electromechanical platforms.
-</p>
-</div>
-
-<div class="card">
-<h3>Engineering Analysis</h3>
-<p>
-Finite element analysis across structural, thermal, and flow domains
-to reduce technical risk prior to hardware release.
-</p>
-</div>
-
-<div class="card">
-<h3>DFMA & Production Transition</h3>
-<p>
-Tolerance optimization, supplier coordination,
-ERP integration, and transition from prototype to scalable production.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<img class="tech-image" src="https://images.unsplash.com/photo-1581091012184-5c4c7c8c1d4e?auto=format&fit=crop&w=1400&q=80" alt="Advanced engineering lab environment">
-</section>
-
-<section id="expertise">
-<h2>Technical Depth</h2>
-
-<p>
-Extensive cross-disciplinary integration experience spanning mechanical,
-electrical, motion control, sensing, and fluidic systems within
-regulated and performance-critical environments.
-</p>
-
-<p><strong>
-Experienced in carrying concepts from early architecture
-through detailed design, validation, and production release.
-</strong></p>
-
-<p>
-Focused on engineering systems that withstand regulatory scrutiny,
-manufacturing scale, and real-world operational demands.
-</p>
-</section>
-
-<section id="engagement">
-<h2>Engagement Model</h2>
-
-<p>
-Available for technically complex programs requiring
-independent engineering ownership and disciplined execution.
-</p>
-
-<p>
-Structured around defined deliverables and milestone-based development.
-Remote and hybrid collaboration supported.
-</p>
-</section>
-
-<section id="contact">
-<h2>Confidential Consultation</h2>
-
-<p>
-Currently accepting new contract engineering engagements.
-Initial technical discussion available within one week.
-</p>
-
-<p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
-
-<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
-<div class="grid">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-</div>
-<textarea name="message" placeholder="Brief Project Overview" required></textarea>
-<button type="submit">Submit Inquiry</button>
-</form>
-
-</section>
-
-</main>
-
-<footer class="container">
-<small>
-Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
-</small>
-</footer>
-
-</body>
-</html>  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-}
-
-@media (max-width: 1200px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 700px) {
-  .grid-4 { grid-template-columns: 1fr; }
-}
-
-.card {
-  background: #1b2433;
-  padding: 2.75rem;
-  border-radius: 18px;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,.5);
-}
-
-footer { padding: 4rem 0; text-align: center; }
-
-button {
-  font-weight: 600;
-  padding: 0.9rem 1.6rem;
-}
-</style>
-</head>
-
-<body>
-
-<nav class="container-fluid">
-  <ul>
-    <li><strong>Dale L. Heintzelman, BS ME, EIT</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#engagement">Engagement</a></li>
-    <li><a href="#contact" role="button">Schedule Consultation</a></li>
-  </ul>
-</nav>
-
-<main class="container">
-
-<section class="hero">
-<hgroup>
-<h1>Senior Mechanical Engineering Consultant</h1>
-<h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
-</hgroup>
-
-<p>
-Providing senior-level mechanical engineering execution for organizations
-developing technically demanding hardware platforms. Supporting engineering
-teams with independent design ownership, rigorous analysis, and disciplined
-product development through validated production release.
-</p>
-
-<p class="highlight">
-18+ years product development execution | 6+ granted patents | Multiple commercial product releases
-</p>
-
-<a href="#contact" role="button">Schedule a Technical Consultation</a>
-</section>
-
-<section id="services">
-<h2>Senior-Level Engineering Capability</h2>
-
-<div class="grid-4">
-
-<div class="card">
-<h3>Product Architecture & System Design</h3>
-<p>
-Mechanical system architecture, subsystem definition,
-interface management, tolerance strategy, and structured risk mitigation.
-</p>
-</div>
-
-<div class="card">
-<h3>Precision Mechanical & Fluidic Systems</h3>
-<p>
-Design and integration of displacement pumps, motion assemblies,
-optical systems, and electromechanical platforms operating in
-performance-critical environments.
-</p>
-</div>
-
-<div class="card">
-<h3>Engineering Analysis</h3>
-<p>
-Finite element analysis across structural, thermal, and flow domains
-using SolidWorks Simulation and ANSYS to reduce technical risk
-prior to hardware release.
-</p>
-</div>
-
-<div class="card">
-<h3>DFMA & Production Transition</h3>
-<p>
-Tolerance stack optimization, GD&T per ASME Y14.5,
-supplier coordination, ERP integration, and controlled
-transition from prototype to scalable production.
-</p>
-</div>
-
-</div>
-</section>
-
-<section id="expertise">
-<h2>Technical Depth</h2>
-
-<p>
-Extensive cross-disciplinary integration experience spanning mechanical,
-electrical, motion control, sensing, and fluidic systems within
-regulated and performance-critical environments.
-</p>
-
-<p><strong>
-Experienced in carrying concepts from early architecture
-through detailed design, validation, and production release.
-</strong></p>
-
-<p>
-Recognized contributor to patented technologies in precision pump systems,
-photometric instrumentation, and advanced mechanical assemblies.
-Focused on engineering systems that withstand regulatory scrutiny,
-manufacturing scale, and real-world operational demands.
-</p>
-</section>
-
-<section id="engagement">
-<h2>Engagement Model</h2>
-
-<p>
-Available for technically complex programs requiring
-independent engineering ownership and disciplined execution.
-</p>
-
-<p>
-Structured around defined deliverables, milestone-based development,
-and seamless integration within existing engineering teams.
-</p>
-
-<p>
-Remote and hybrid collaboration supported.
-On-site integration available within the Northeast region.
-</p>
-</section>
-
-<section id="contact">
-<h2>Confidential Consultation</h2>
-
-<p>
-Currently accepting new contract engineering engagements.
-Initial technical consultation available within one week.
-</p>
-
-<p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
-
-<form action="mailto:Dale.Heintzelman@gmail.com" method="post" enctype="text/plain">
-<div class="grid">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-</div>
-<textarea name="message" placeholder="Brief Project Overview" required></textarea>
-<button type="submit">Submit Inquiry</button>
-</form>
-
-</section>
-
-</main>
-
-<footer class="container">
-<small>
-Independent Mechanical Engineering Consultant | Massachusetts & National Remote Engagement
-</small>
-</footer>
-
-</body>
-</html>
-
-
-
