@@ -20,7 +20,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -35,7 +35,7 @@ body {
   z-index: 9999;
 }
 
-/* Subtle blueprint grid background */
+/* Subtle blueprint grid */
 body::before {
   content: "";
   position: fixed;
@@ -43,22 +43,22 @@ body::before {
   background-image:
     linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 70px 70px;
-  animation: drift 90s linear infinite;
+  background-size: 80px 80px;
+  animation: drift 120s linear infinite;
   z-index: -2;
 }
 
 @keyframes drift {
   from { transform: translate(0,0); }
-  to { transform: translate(-70px,70px); }
+  to { transform: translate(-80px,80px); }
 }
 
-/* Glass navigation */
+/* Nav */
 nav {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(14px);
-  background: rgba(10,15,28,0.75);
+  backdrop-filter: blur(16px);
+  background: rgba(10,15,28,0.8);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 10;
 }
@@ -71,8 +71,8 @@ main {
 section {
   margin-bottom: 9rem;
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+  transform: translateY(60px);
+  transition: all 1.2s cubic-bezier(.22,.61,.36,1);
 }
 
 section.visible {
@@ -100,36 +100,23 @@ section.visible {
   margin-bottom: 3rem;
 }
 
-/* Blueprint SVG overlay */
-.hero svg {
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.08;
-  z-index: -1;
-  width: 600px;
-  animation: rotate 60s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg); }
-}
-
 .badge {
   display: inline-block;
-  padding: 0.6rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 999px;
   background: rgba(56,189,248,0.15);
-  border: 1px solid rgba(56,189,248,0.35);
+  border: 1px solid rgba(56,189,248,0.4);
   color: var(--accent);
   font-size: 1rem;
-  margin-top: 2.5rem;
-  box-shadow: 0 0 30px rgba(56,189,248,0.15);
+  margin-top: 2rem;
+  box-shadow: 0 0 35px rgba(56,189,248,0.15);
 }
 
-/* Section headers */
+.resume-btn {
+  margin-top: 2rem;
+}
+
+/* Section heading */
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -139,11 +126,19 @@ h2 {
 h2::after {
   content: "";
   display: block;
-  width: 90px;
+  width: 100px;
   height: 3px;
   background: var(--accent);
   margin-top: 0.6rem;
   border-radius: 2px;
+}
+
+/* Elegant section divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(56,189,248,0.4), transparent);
+  margin: 6rem 0;
+  opacity: 0.4;
 }
 
 /* Cards */
@@ -169,7 +164,7 @@ h2::after {
 .card:hover {
   transform: translateY(-12px);
   box-shadow: 0 40px 80px rgba(0,0,0,0.75);
-  border-color: rgba(56,189,248,0.5);
+  border-color: rgba(56,189,248,0.6);
 }
 
 /* Footer */
@@ -179,11 +174,6 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
   opacity: 0.45;
   font-size: 0.9rem;
-}
-
-button {
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -206,87 +196,89 @@ button {
 <main class="container">
 
 <section class="hero">
-  <!-- Blueprint Signature SVG -->
-  <svg viewBox="0 0 200 200">
-    <circle cx="100" cy="100" r="80" fill="none" stroke="#38bdf8" stroke-width="1"/>
-    <circle cx="100" cy="100" r="50" fill="none" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="100" y1="20" x2="100" y2="180" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="20" y1="100" x2="180" y2="100" stroke="#38bdf8" stroke-width="1"/>
-  </svg>
-
   <h1>Senior Mechanical Engineering Consultant</h1>
-  <h3>Complex Systems • Precision Engineering • Commercial Product Execution</h3>
+  <h3>Precision Systems • Regulated Product Development • Commercial Execution</h3>
 
   <p>
-    Providing senior-level mechanical engineering execution for technically demanding
-    hardware platforms. Supporting engineering teams with independent design ownership,
-    rigorous analysis, and disciplined product development through validated production release.
+    Senior mechanical engineer delivering production-ready hardware systems
+    for regulated and performance-critical environments. Independent design ownership,
+    cross-functional integration, and disciplined execution through validated release.
   </p>
 
   <div class="badge">
-    18+ Years Experience • 6+ Granted Patents • Multiple Commercial Releases
+    18+ Years Experience • 6+ Granted Patents • Multiple Commercial Product Releases
+  </div>
+
+  <div class="resume-btn">
+    <a href="Heintzelman_Dale_Resume_2025.pdf" download role="button">Download Resume (PDF)</a>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <section id="services">
-  <h2>Senior-Level Engineering Capability</h2>
+  <h2>Core Engineering Capability</h2>
 
   <div class="cards">
     <div class="card">
-      <h3>Product Architecture & System Design</h3>
+      <h3>System Architecture & Mechanical Design</h3>
       <p>
-        Mechanical system architecture, subsystem definition,
-        interface management, and structured risk mitigation.
+        Complex subsystem definition, tolerance strategy, interface control,
+        and structured risk mitigation for precision mechanical platforms.
       </p>
     </div>
 
     <div class="card">
-      <h3>Precision Mechanical & Fluidic Systems</h3>
+      <h3>Fluidics, Motion & Electromechanical Integration</h3>
       <p>
-        Design and integration of displacement pumps, motion assemblies,
-        optical systems, and electromechanical platforms.
+        Displacement pump systems, brushless motor assemblies,
+        optical integration, and performance-critical mechanical systems.
       </p>
     </div>
 
     <div class="card">
-      <h3>Engineering Analysis</h3>
+      <h3>Finite Element & Engineering Analysis</h3>
       <p>
-        Finite element analysis across structural, thermal,
-        and flow domains to reduce technical risk prior to release.
+        Structural, thermal, and flow simulation to reduce technical risk
+        prior to hardware validation and release.
       </p>
     </div>
 
     <div class="card">
       <h3>DFMA & Production Transition</h3>
       <p>
-        Tolerance optimization, supplier coordination,
-        and transition from prototype to scalable production.
+        GD&T per ASME Y14.5, supplier coordination, ERP integration,
+        and controlled transition from prototype to scalable manufacturing.
       </p>
     </div>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <section id="expertise">
   <h2>Technical Depth</h2>
 
   <p>
-    Extensive cross-disciplinary integration experience spanning mechanical,
-    electrical, motion control, sensing, and fluidic systems within regulated
-    and performance-critical environments.
+    Experience spanning medical device systems, precision motors,
+    air quality instrumentation, fluidic architectures,
+    vacuum systems, and scientific hardware platforms.
   </p>
 
   <p>
-    Focused on delivering production-ready systems that withstand regulatory,
-    manufacturing, and operational scrutiny.
+    Focused on delivering systems that withstand regulatory scrutiny,
+    manufacturing scale, and real-world operational demands.
   </p>
 </section>
+
+<div class="divider"></div>
 
 <section id="contact">
   <h2>Confidential Consultation</h2>
 
   <p>
-    Currently accepting select contract engineering engagements.
-    Initial discussion available within one week.
+    Selectively accepting new contract engagements.
+    Initial technical discussion available within one week.
   </p>
 
   <p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
