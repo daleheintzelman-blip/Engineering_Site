@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll progress */
+/* Scroll Progress */
 #progress {
   position: fixed;
   top: 0;
@@ -35,34 +35,41 @@ body {
   z-index: 9999;
 }
 
-/* Subtle blueprint grid */
+/* Animated background glow */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: drift 120s linear infinite;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56,189,248,0.12), transparent 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pulseGlow 8s ease-in-out infinite alternate;
   z-index: -2;
 }
 
-@keyframes drift {
-  from { transform: translate(0,0); }
-  to { transform: translate(-80px,80px); }
+@keyframes pulseGlow {
+  from { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  to { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
 }
 
-/* Nav */
+/* Glass Nav */
 nav {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
   background: rgba(10,15,28,0.8);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 10;
+  transition: 0.4s ease;
 }
 
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Layout */
 main {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -72,7 +79,7 @@ section {
   margin-bottom: 9rem;
   opacity: 0;
   transform: translateY(60px);
-  transition: all 1.2s cubic-bezier(.22,.61,.36,1);
+  transition: all 1.1s cubic-bezier(.22,.61,.36,1);
 }
 
 section.visible {
@@ -89,7 +96,7 @@ section.visible {
 }
 
 .hero h1 {
-  font-size: 3.6rem;
+  font-size: 3.8rem;
   letter-spacing: 0.6px;
   margin-bottom: 1.5rem;
 }
@@ -109,14 +116,16 @@ section.visible {
   color: var(--accent);
   font-size: 1rem;
   margin-top: 2rem;
-  box-shadow: 0 0 35px rgba(56,189,248,0.15);
+  box-shadow: 0 0 35px rgba(56,189,248,0.2);
+  animation: badgeGlow 4s ease-in-out infinite alternate;
 }
 
-.resume-btn {
-  margin-top: 2rem;
+@keyframes badgeGlow {
+  from { box-shadow: 0 0 20px rgba(56,189,248,0.15); }
+  to { box-shadow: 0 0 45px rgba(56,189,248,0.35); }
 }
 
-/* Section heading */
+/* Section Heading Accent */
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -131,14 +140,12 @@ h2::after {
   background: var(--accent);
   margin-top: 0.6rem;
   border-radius: 2px;
+  animation: growLine 1.5s ease forwards;
 }
 
-/* Elegant section divider */
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(56,189,248,0.4), transparent);
-  margin: 6rem 0;
-  opacity: 0.4;
+@keyframes growLine {
+  from { width: 0; }
+  to { width: 100px; }
 }
 
 /* Cards */
@@ -159,12 +166,35 @@ h2::after {
   border-radius: 20px;
   transition: 0.4s ease;
   border: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(56,189,248,0.08), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.card:hover::before {
+  transform: translateX(100%);
 }
 
 .card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.75);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8);
   border-color: rgba(56,189,248,0.6);
+}
+
+/* Elegant Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(56,189,248,0.4), transparent);
+  margin: 6rem 0;
+  opacity: 0.5;
 }
 
 /* Footer */
@@ -172,7 +202,7 @@ footer {
   text-align: center;
   padding: 6rem 0 5rem 0;
   border-top: 1px solid rgba(255,255,255,0.05);
-  opacity: 0.45;
+  opacity: 0.4;
   font-size: 0.9rem;
 }
 </style>
@@ -200,17 +230,19 @@ footer {
   <h3>Precision Systems • Regulated Product Development • Commercial Execution</h3>
 
   <p>
-    Senior mechanical engineer delivering production-ready hardware systems
-    for regulated and performance-critical environments. Independent design ownership,
+    Delivering production-ready hardware systems for performance-critical
+    and regulated environments. Independent design ownership,
     cross-functional integration, and disciplined execution through validated release.
   </p>
 
   <div class="badge">
-    18+ Years Experience • 6+ Granted Patents • Multiple Commercial Product Releases
+    18+ Years Experience • 6+ Granted Patents • Multiple Commercial Releases
   </div>
 
-  <div class="resume-btn">
-    <a href="Heintzelman_Dale_Resume_2025.pdf" download role="button">Download Resume (PDF)</a>
+  <div style="margin-top:2rem;">
+    <a href="Heintzelman_Dale_Resume_2025.pdf" download role="button">
+      Download Resume (PDF)
+    </a>
   </div>
 </section>
 
@@ -223,32 +255,32 @@ footer {
     <div class="card">
       <h3>System Architecture & Mechanical Design</h3>
       <p>
-        Complex subsystem definition, tolerance strategy, interface control,
-        and structured risk mitigation for precision mechanical platforms.
+        Subsystem definition, tolerance strategy, interface control,
+        and structured risk mitigation for complex mechanical platforms.
       </p>
     </div>
 
     <div class="card">
       <h3>Fluidics, Motion & Electromechanical Integration</h3>
       <p>
-        Displacement pump systems, brushless motor assemblies,
-        optical integration, and performance-critical mechanical systems.
+        Displacement pump systems, precision motor assemblies,
+        optical integration, and high-performance hardware platforms.
       </p>
     </div>
 
     <div class="card">
       <h3>Finite Element & Engineering Analysis</h3>
       <p>
-        Structural, thermal, and flow simulation to reduce technical risk
-        prior to hardware validation and release.
+        Structural, thermal, and flow simulation to reduce risk
+        prior to validation and production release.
       </p>
     </div>
 
     <div class="card">
       <h3>DFMA & Production Transition</h3>
       <p>
-        GD&T per ASME Y14.5, supplier coordination, ERP integration,
-        and controlled transition from prototype to scalable manufacturing.
+        GD&T implementation, supplier coordination,
+        and transition from prototype to scalable manufacturing.
       </p>
     </div>
   </div>
@@ -260,7 +292,7 @@ footer {
   <h2>Technical Depth</h2>
 
   <p>
-    Experience spanning medical device systems, precision motors,
+    Experience across medical device systems, precision motors,
     air quality instrumentation, fluidic architectures,
     vacuum systems, and scientific hardware platforms.
   </p>
@@ -278,7 +310,7 @@ footer {
 
   <p>
     Selectively accepting new contract engagements.
-    Initial technical discussion available within one week.
+    Initial discussion available within one week.
   </p>
 
   <p><strong>Direct Email: Dale.Heintzelman@gmail.com</strong></p>
